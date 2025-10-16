@@ -104,7 +104,7 @@ def _find_dart_sass_executable() -> Optional[List[str]]:
                     pass  # Skip our own Python script
                 else:
                     return [sass_exe]
-        except (IOError, OSError):
+        except (IOError, OSError, UnicodeDecodeError):
             # If we can't read it, assume it's a binary and try it
             return [sass_exe]
     
